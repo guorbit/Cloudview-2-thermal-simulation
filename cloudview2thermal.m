@@ -114,14 +114,6 @@ for i = 2:length(time)
         heater_power(i) = 5 * (target_temp_max - temperature_payload(i-1)) / target_temp_max;
     end
 
-    % if temperature_payload(i-1) < target_temp_min
-    %     heater_power(i) = 5; % Heater ON
-    % elseif temperature_payload(i-1) > target_temp_max
-    %     heater_power(i) = 0;  % Heater OFF
-    % else
-    %     heater_power(i) = 5;
-    % end
-
     
     % Net Heat Balance
     Q_net = Q_solar + Q_albedo + Q_planetary + heater_power(i) - Q_radiation - Q_convection;
